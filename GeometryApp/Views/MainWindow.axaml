@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GeometryApp.Views;assembly=GeometryApp"
+        xmlns:views="clr-namespace:GeometryApp.Views;assembly=GeometryApp"
+        xmlns:vm="clr-namespace:GeometryApp.ViewModels;assembly=GeometryApp"
+        x:Class="GeometryApp.Views.MainWindow"
+        x:DataType="vm:GeometryViewModel"
+        Title="Geometry App"
+        Width="1024" Height="768">
+
+  <!-- Основной DataContext для Geometry-вкладки -->
+  <Window.DataContext>
+    <vm:GeometryViewModel/>
+  </Window.DataContext>
+
+  <TabControl>
+
+    <!-- Вкладка 1: Геометрия -->
+    <TabItem Header="Геометрия">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10" Spacing="5">
+          <Button Content="Добавить точку"
+                  Command="{Binding AddPointCommand}"/>
+          <Button Content="Добавить линию"
+                  Command="{Binding AddLineCommand}"/>
+          <Button Content="Добавить эллипс"
+                  Command="{Binding AddEllipseCommand}"/>
+          <Button Content="Добавить многоугольник"
+                  Command="{Binding AddPolygonCommand}"/>
+        </StackPanel>
+
+        <local:GeometryCanvas x:Name="CanvasView"
+                              Grid.Row="1"/>
+      </Grid>
+    </TabItem>
+
+    <!-- Вкладка 2: Reflection -->
+    <TabItem Header="Reflection">
+      <!-- внутри ReflectionView указано своё x:DataType -->
+      <views:ReflectionView/>
+    </TabItem>
+
+  </TabControl>
+</Window>

@@ -1,0 +1,11 @@
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\bin\Debug\net9.0\GeometryApp.Plugins.deps.json
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\bin\Debug\net9.0\GeometryApp.Plugins.dll
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\bin\Debug\net9.0\GeometryApp.Plugins.pdb
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\obj\Debug\net9.0\GeometryApp.Plugins.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\obj\Debug\net9.0\GeometryApp.Plugins.AssemblyInfoInputs.cache
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\obj\Debug\net9.0\GeometryApp.Plugins.AssemblyInfo.cs
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\obj\Debug\net9.0\GeometryApp.Plugins.csproj.CoreCompileInputs.cache
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\obj\Debug\net9.0\GeometryApp.Plugins.dll
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\obj\Debug\net9.0\refint\GeometryApp.Plugins.dll
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\obj\Debug\net9.0\GeometryApp.Plugins.pdb
+D:\C#Lab\GeometryApp\GeometryApp.Plugins\obj\Debug\net9.0\ref\GeometryApp.Plugins.dll

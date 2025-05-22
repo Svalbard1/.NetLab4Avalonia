@@ -1,0 +1,72 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:GeometryApp.Reflection;assembly=GeometryApp"
+             x:Class="GeometryApp.Views.ReflectionView"
+             x:DataType="vm:ReflectionViewModel">
+
+  <UserControl.DataContext>
+    <vm:ReflectionViewModel/>
+  </UserControl.DataContext>
+
+  <StackPanel Margin="12" Spacing="10">
+
+    <TextBlock Text="Путь к плагину (.dll):" />
+    <StackPanel Orientation="Horizontal" Spacing="6">
+      <TextBox Width="400"
+               Text="{Binding AssemblyPath, Mode=TwoWay}"
+               Watermark="C:\Plugins\MyPlugin.dll"/>
+      <Button Content="Загрузить"
+              Command="{Binding LoadAssemblyCommand}"/>
+    </StackPanel>
+
+    <Grid ColumnDefinitions="2*,3*"
+          RowDefinitions="Auto,*"
+          Margin="0,8,0,0">
+
+      <ListBox Grid.Row="1" Grid.Column="0"
+               ItemsSource="{Binding Classes}"
+               SelectedItem="{Binding SelectedClass}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding Name}"/>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <StackPanel Grid.Row="1" Grid.Column="1" Spacing="6">
+
+        <ComboBox ItemsSource="{Binding SelectedClass.Methods}"
+                  SelectedItem="{Binding SelectedMethod}">
+          <ComboBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding Name}"/>
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <!-- Параметры метода -->
+        <ItemsControl ItemsSource="{Binding Parameters}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal" Spacing="6">
+                <TextBlock Text="{Binding Name}" Width="100"/>
+                <TextBox Width="250"
+                         Text="{Binding Value, Mode=TwoWay}"
+                         Watermark="{Binding Name}"/>
+              </StackPanel>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Button Content="Выполнить"
+                Command="{Binding ExecuteMethodCommand}"/>
+
+        <TextBlock Text="Результат:" Margin="0,6,0,0"/>
+        <TextBox Text="{Binding Result}"
+                 IsReadOnly="True"
+                 Height="60"/>
+      </StackPanel>
+    </Grid>
+
+  </StackPanel>
+</UserControl>
